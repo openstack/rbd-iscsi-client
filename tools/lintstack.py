@@ -44,7 +44,7 @@ ignore_messages = [
     "Module 'hashlib' has no 'sha224' member",
 ]
 
-ignore_modules = ["os_brick/tests/",
+ignore_modules = ["rbd_iscsi_client/tests/",
                   "tools/lintstack.head.py"]
 
 KNOWN_PYLINT_EXCEPTIONS_FILE = "tools/pylint_exceptions"
@@ -145,7 +145,7 @@ class ErrorKeys(object):
 def run_pylint():
     buff = StringIO()
     reporter = text.ParseableTextReporter(output=buff)
-    args = ["--include-ids=y", "-E", "os_brick"]
+    args = ["--include-ids=y", "--errors-only", "rbd_iscsi_client"]
     lint.Run(args, reporter=reporter, exit=False)
     val = buff.getvalue()
     buff.close()

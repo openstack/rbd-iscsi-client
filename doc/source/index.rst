@@ -8,8 +8,7 @@ Welcome to RBD iSCSI Client's documentation!
    readme
    installation
    usage
-   contributing
-   history
+   contributor/contributing
 
 Indices and tables
 ==================

@@ -41,7 +41,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'rbd-iscsi-client'
 copyright = u"2019, Walter A. Boring IV"
-author = u"Walter A. Boring IV"
+author = u"Cinder Contributors"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -60,7 +60,7 @@ release = version_info.release_string()
 language = None
 
 add_function_parentheses = True
-add_module_names = True
+add_module_names = False
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -68,7 +68,7 @@ add_module_names = True
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'native'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
@@ -116,7 +116,7 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'rbd_iscsi_client.tex',
      u'RBD iSCSI Client Documentation',
-     u'Walter A. Boring IV', 'manual'),
+     author, 'manual'),
 ]
 
 
@@ -141,12 +141,13 @@ texinfo_documents = [
      u'RBD iSCSI Client Documentation',
      author,
      'rbd_iscsi_client',
-     'One line description of project.',
+     "Provides a REST client that talks to ceph-isci's rbd-target-api "
+     "to export rbd images/volumes to an iSCSI initiator.",
      'Miscellaneous'),
 ]
 
 
 # -- Options for openstackdocstheme -----------------------------------
-repository_name = 'hemna/rbd-iscsi-client'
-bug_project = 'rbd-iscsi-client'
-bug_tag = ''
+openstackdocs_repo_name = 'openstack/rbd-iscsi-client'
+openstackdocs_bug_project = 'rbd-iscsi-client'
+openstackdocs_bug_tag = 'doc'

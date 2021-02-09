@@ -14,7 +14,8 @@ To install RBD iSCSI Client, run this command in your terminal:
 
     $ pip install rbd-iscsi-client
 
-This is the preferred method to install RBD iSCSI Client, as it will always install the most recent stable release.
+This is the preferred method to install RBD iSCSI Client, as it will always
+install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +27,20 @@ you through the process.
 From sources
 ------------
 
-The sources for RBD iSCSI Client can be downloaded from the `Github repo`_.
+The sources for RBD iSCSI Client can be downloaded from the `git repo`_
+hosted on opendev.org.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/hemna/rbd-iscsi-client
+    $ git clone https://opendev.org/openstack/rbd-iscsi-client.git
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/hemna/rbd-iscsi-client/tarball/master
+    $ curl  -OL https://opendev.org/openstack/rbd-iscsi-client/archive/master.tar.gz
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +49,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/hemna/rbd-iscsi-client
-.. _tarball: https://github.com/hemna/rbd-iscsi-client/tarball/master
+.. _git repo: https://opendev.org/openstack/rbd-iscsi-client
+.. _tarball: https://opendev.org/openstack/rbd-iscsi-client/archive/master.tar.gz

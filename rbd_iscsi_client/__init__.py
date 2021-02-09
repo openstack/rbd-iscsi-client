@@ -12,14 +12,9 @@
 
 import pbr.version
 
-__all_ = ['__version__']
-
-__author__ = """Walter A. Boring IV"""
-__email__ = 'waboring@hemna.com'
-
 version_info = pbr.version.VersionInfo('rbd-iscsi-client')
 
 try:
-    version = version_info.version_string()
+    __version__ = version_info.version_string()
 except AttributeError:
-    version = None
+    __version__ = None

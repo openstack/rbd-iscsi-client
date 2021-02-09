@@ -1,0 +1,17 @@
+Babel==2.3.4
+coverage==4.1
+doc8==0.6.0
+ddt==1.2.1
+hacking==3.1.0
+openstackdocstheme==2.2.7
+oslo.i18n==3.24.0
+oslo.log==3.44.0
+oslo.utils==3.36.0
+oslotest==3.2.0
+pbr==5.4.1
+reno==3.1.0
+requests==2.14.2
+sphinx==2.0.0
+stestr==1.0.0
+testscenarios==0.4
+testtools==2.2.0

@@ -1,4 +1,10 @@
 # Byte-compiled / optimized / DLL files
+.*
+!.coveragerc
+!.gitignore
+!.testr.conf
+!.stestr.conf
+!.zuul.yaml
 __pycache__/
 *.py[cod]
 *$py.class
@@ -44,8 +50,11 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+cover/
 .hypothesis/
 .pytest_cache/
+tools/lintstack.head.py
+tools/pylint_exceptions
 
 # Translations
 *.mo
@@ -100,3 +109,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Files created by releasenotes build
+releasenotes/build
+RELEASENOTES.rst
+releasenotes/notes/reno.cache
