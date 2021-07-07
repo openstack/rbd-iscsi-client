@@ -1,6 +1,5 @@
 - project:
     templates:
-      - openstack-lower-constraints-jobs
       - openstack-python3-xena-jobs
       - publish-openstack-docs-pti
       - check-requirements
@@ -16,7 +15,6 @@
     timeout: 2400
     irrelevant-files:
       - ^(test-|)requirements.txt$
-      - ^lower-constraints.txt$
       - ^.*\.rst$
       - ^rbd_iscsi_client/locale/.*$
       - ^doc/.*$
