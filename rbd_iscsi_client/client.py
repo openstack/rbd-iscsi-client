@@ -97,7 +97,7 @@ class RBDISCSIClient(object):
                                     {'key': key,
                                      'value': kwargs['data'][key]})
 
-        self._logger.debug("\nREQ: %s\n" % "".join(string_parts))
+        self._logger.debug("\nREQ: %s\n", "".join(string_parts))
 
     def _http_log_resp(self, resp, body):
         if not self.http_log_debug:

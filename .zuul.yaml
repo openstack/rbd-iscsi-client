@@ -10,9 +10,7 @@
 
     check:
       jobs:
-        - openstack-tox-pep8:
-            # TODO: make voting when pep8 job is fixed
-            voting: false
+        - openstack-tox-pep8
         - rbd-iscsi-client-py36
         - openstack-tox-py38
         - openstack-tox-py39
@@ -21,9 +19,7 @@
 
     gate:
       jobs:
-        - openstack-tox-pep8:
-            # TODO: make voting when pep8 job is fixed
-            voting: false
+        - openstack-tox-pep8
         - rbd-iscsi-client-py36
         - openstack-tox-py38
         - openstack-tox-py39
