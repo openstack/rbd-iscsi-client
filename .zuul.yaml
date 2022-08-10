@@ -1,13 +1,32 @@
 - project:
     templates:
-      - openstack-python3-xena-jobs
+      # NOTE: we don't use the openstack-python3 jobs template here
+      # because being on an independent release model, we support
+      # more than the required pythons
+
       - publish-openstack-docs-pti
       - check-requirements
       - release-notes-jobs-python3
+
     check:
       jobs:
+        - openstack-tox-pep8:
+            # TODO: make voting when pep8 job is fixed
+            voting: false
+        - rbd-iscsi-client-py36
+        - openstack-tox-py38
+        - openstack-tox-py39
         - rbd-iscsi-client-code-coverage:
             voting: false
+
+    gate:
+      jobs:
+        - openstack-tox-pep8:
+            # TODO: make voting when pep8 job is fixed
+            voting: false
+        - rbd-iscsi-client-py36
+        - openstack-tox-py38
+        - openstack-tox-py39
 
 - job:
     name: rbd-iscsi-client-code-coverage
@@ -22,3 +41,13 @@
       - ^setup.cfg$
       - ^tools/.*$
       - ^tox.ini$
+
+- job:
+    name: rbd-iscsi-client-py36
+    parent: openstack-tox-py36
+    # NOTE: zuul ignores TOX_CONSTRAINTS_FILE and uses upper constraints
+    # directly from the requirements repo, so we need to tell it to use
+    # the u-c from a branch that still supports py36
+    required-projects:
+      - name: openstack/requirements
+        override-checkout: stable/yoga
