@@ -12,8 +12,9 @@
       jobs:
         - openstack-tox-pep8
         - rbd-iscsi-client-py36
-        - openstack-tox-py38
+        - rbd-iscsi-client-py38
         - openstack-tox-py39
+        - openstack-tox-py310
         - rbd-iscsi-client-code-coverage:
             voting: false
 
@@ -21,8 +22,9 @@
       jobs:
         - openstack-tox-pep8
         - rbd-iscsi-client-py36
-        - openstack-tox-py38
+        - rbd-iscsi-client-py38
         - openstack-tox-py39
+        - openstack-tox-py310
 
 - job:
     name: rbd-iscsi-client-code-coverage
@@ -47,3 +49,13 @@
     required-projects:
       - name: openstack/requirements
         override-checkout: stable/yoga
+
+- job:
+    name: rbd-iscsi-client-py38
+    parent: openstack-tox-py38
+    # NOTE: zuul ignores TOX_CONSTRAINTS_FILE and uses upper constraints
+    # directly from the requirements repo, so we need to tell it to use
+    # the u-c from a branch that still supports py38
+    required-projects:
+      - name: openstack/requirements
+        override-checkout: stable/2023.1
