@@ -16,6 +16,8 @@
         - openstack-tox-py39
         - openstack-tox-py310
         - openstack-tox-py311
+        - openstack-tox-py312:
+            voting: false
         - rbd-iscsi-client-code-coverage:
             voting: false
 
@@ -50,7 +52,9 @@
     # the u-c from a branch that still supports py36
     required-projects:
       - name: openstack/requirements
-        override-checkout: stable/yoga
+        # NOTE: yoga became Unmaintained on 2024-02-08, so we checkout
+        # at the end-of-maintenance tag
+        override-checkout: yoga-eom
 
 - job:
     name: rbd-iscsi-client-py38
